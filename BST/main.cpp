@@ -2,12 +2,10 @@
 
 int main()
 {
-    BST first;
-    newNode(x);
-    begin->setData(5);
-    //std::cout << begin->getData() << "\n";
-    first.setRoot(begin);
-    std::cout << first.getRoot()->getData() << "\n";
-    delete begin;
-    begin = nullptr;
+    Node* hello = new Node;
+    hello->setData(5);
+    BST christmas(hello);
+    christmas.display();
+    christmas.insert(christmas.getRoot(), 6);
+    christmas.insert(christmas.getRoot(), 4);
 }

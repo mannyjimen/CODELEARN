@@ -17,12 +17,6 @@ struct Node
     {
         return data_;
     }
-    Node* newNode(int x)
-    {
-        Node* nodeNew = new Node;
-        nodeNew->setData(x);
-        return nodeNew;
-    }
 };
 
 
@@ -34,9 +28,10 @@ class BST
 
         //BSTNode();
         //what are some functions i would want in a bst ? Find, Insert, Remove
-
+        BST();
+        BST(Node* root);
+        BST~;
         Node* newNode(int x);    
-
 
         bool setRoot(Node* root);
         Node* getRoot();
@@ -45,8 +40,6 @@ class BST
 
         void display();
         
-        
-
 };
 
 #endif
