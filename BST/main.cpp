@@ -3,9 +3,10 @@
 int main()
 {
     Node* hello = new Node;
-    hello->setData(5);
     BST christmas(hello);
+    christmas.insert(6);
     christmas.display();
-    christmas.insert(christmas.getRoot(), 6);
-    christmas.insert(christmas.getRoot(), 4);
+    christmas.insert(4);
+    
+    return 0;
 }
