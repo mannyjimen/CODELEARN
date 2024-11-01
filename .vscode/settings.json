@@ -2,6 +2,7 @@
     "files.associations": {
         "string": "cpp",
         "iostream": "cpp",
+<<<<<<< HEAD
         "__bit_reference": "cpp",
         "__config": "cpp",
         "__hash_table": "cpp",
@@ -19,10 +20,23 @@
         "cmath": "cpp",
         "complex": "cpp",
         "cstdarg": "cpp",
+=======
+        "new": "cpp",
+        "array": "cpp",
+        "atomic": "cpp",
+        "bit": "cpp",
+        "*.tcc": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+>>>>>>> 7903d7a34ff3b27319ad14c5b24e7d1e4a14ffd9
         "cstddef": "cpp",
         "cstdint": "cpp",
         "cstdio": "cpp",
         "cstdlib": "cpp",
+<<<<<<< HEAD
         "cstring": "cpp",
         "ctime": "cpp",
         "cwchar": "cpp",
@@ -51,5 +65,36 @@
         "variant": "cpp",
         "vector": "cpp",
         "algorithm": "cpp"
+=======
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "exception": "cpp",
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "optional": "cpp",
+        "random": "cpp",
+        "string_view": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "initializer_list": "cpp",
+        "iosfwd": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "numbers": "cpp",
+        "ostream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "typeinfo": "cpp",
+        "set": "cpp"
+>>>>>>> 7903d7a34ff3b27319ad14c5b24e7d1e4a14ffd9
     }
 }

@@ -1,19 +1,22 @@
 #include "BST.hpp"
 
-BST::BST()
-{
-    root_ = nullptr;
-}
+BST::BST(): root_{nullptr} {}//{ root_ = nullptr; }
 
-BST::BST(Node* root)
+BST::BST(Node* root): root_{root} {}//{ root_ = root; }
+
+BST::~BST()
 {
-    root_ = root;
+    if (root_)
+    {
+        delete root_;
+        root_ = nullptr;
+    }
+    std::cout << "Destructor has been called" << std::endl;
 }
 
 Node* BST::newNode(int x)
 {
-    Node* nodeNew = new Node; //dynamically creating node
-    nodeNew->data_ = x;
+    Node* nodeNew = new Node(x); //dynamically creating node
     return nodeNew;
 }
 
@@ -26,58 +29,53 @@ bool BST::setRoot(Node* root)
     }
     return true;
 }
-Node* BST::getRoot()
+Node* BST::getRoot() const { return root_; }
+
+bool BST::insert(int x) // public insert
 {
-    return root_;
+    Node* oldroot = root_;
+
+    root_ = insert(root_, x);
+
+    return true;
 }
 
-bool BST::insert(Node* root, int x)
-{//recursive
-    if (root = nullptr)
-    {
+Node* BST::insert(Node* root, int x) // private insert
+{
+    if (root == nullptr) // found where we should add a new node
+    {       
+        std::cout << "Just inserted the new Node! of data " << x << std::endl;
         root = newNode(x);
-        return true;
+        return root;
     }
-    else if (x > root->data_)
-    {
-        return (insert(root->right_, x));
-    }
+    
     else if (x < root->data_)
-    {
-        return (insert(root->left_, x));
-    }
-    else if (x == root->data_)
-    {
-        std::cout << "Already in BST" << std::endl;
-        return false;
-    }
-    return false;
+        root->left_ = insert(root->left_, x);
+    else if (x > root->data_)
+        root->right_ = insert(root->right_, x);
+    return root; //if x == the data of current root, x is already in BST
+
 }
 
-bool BST::remove(Node* root, int x)
+bool BST::remove(int x)
 {
-    if (root->data_ == x)
-    {
-        delete root;
-        root = nullptr;
+    remove(root_, x);
+    return true;
+}
+
+Node* BST::remove(Node* root, int x)
+{
+}
+
+bool BST::isEmpty()
+{
+    if (root_ == nullptr)
         return true;
-    }
-    else if (root->data_ < x)
-    {
-        return remove(root->left_, x);
-    }
-    else if (root->data_ > x)
-    {
-        return remove(root->right_, x);
-    }
-    else if (root == nullptr)
-        return false;
     return false;
 }
 
 void BST::display()
 {
-    std::cout << root_->getData() << std::endl;
-    std::cout << root_->left_->getData() << "   " << root_->right_->getData();
+    std::cout << root_->data_ << std::endl;
 }
 
