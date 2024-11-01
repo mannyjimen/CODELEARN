@@ -1,11 +1,12 @@
+#include <vector>
 #include <iostream>
 #include <unordered_map>
 #include <string>
 
 std::vector<int> getIndexes(const std::vector<int>& nums)
 {
-
-    return 0;
+    std::vector<int> newvec;
+    return newvec;
 }
 
 int main()
